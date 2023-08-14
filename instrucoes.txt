@@ -1,0 +1,45 @@
+Desenvolver um CRUD mínimo em NODEJS + HANDLEBARS + Sequelize + MYSQL
+para lidar com os seguintes campos criados em uma tabela de empregados: 
+id: inteiro auto incrementado
+nome: string
+salario bruto: double
+departamento: inteiro ( por enquanto, iremos fazer um CRUD de apenas uma tabela, logo teremos as seguintes opções de departamentos: 
+1- Administrativo
+2 - Designer
+3 - Contabil
+4 - Fábrica
+)
+
+Além, de fazer um CRUD, Apresentar para cada empregado, o id, nome, salario bruto, SALARIO LIQUIDO, e a descrição do departamento conforme a lista acima.
+
+Cálculo do Salário Liquido:
+
+INSS = Salário Bruto * 11%
+IRPF = segue uma tabela de alíquotas : 
+
+Base de Cálculo mensal (R$)	Alíquota (%)	)
+Até 1.903,98	Isento	
+De 1.903,98 até 2.826,65	7,5	
+De 2.826,65 até 3.751,06	15	
+De 3.751,06 até 4.664,68	22,5	
+Acima de 4.664,68	27,5	
+
+
+Exemplo, alguém ganha 5000 reais.
+primeira faixa é isento.
+da segunda faixa, o valor é (2826,65 - 1903,98) * 7,5 %    
+terceira faixa: (3751,06 - 2826,65) * 15%
+quarta faixa: o valor é  (3751,06 -  4664,68) * 22,5%
+quinta faixa o valor é (5000 - 4664,68) * 27,5
+
+
+Somar tudo e teremos o IRPF. 
+
+Finalmente salario liquido = salario bruto - INSS -IRPF.
+
+Fazer as seguintes perguntas: 
+quem ganha o maior salário.
+Quem ganha o menos salário?
+Pesquisar nome por pedaço de nome
+Classificar pelo setor de trabalho
+Quantos trabalham no setor administrativo?
