@@ -3,8 +3,11 @@ const router = express.Router();
 var controller = require("../controllers/controller");
 
 
-router.get("/", controller.exibirTela);
+router.get("/", controller.index);
+router.get("/form", controller.form);
+router.post("/form", controller.add);
+router.get("/deleta/:id", controller.deleta);
+router.get("/edita/:id", controller.edita);
+router.post("/edita/:id", controller.atualiza)
 
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-  });
+module.exports = router;

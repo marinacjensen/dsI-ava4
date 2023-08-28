@@ -1,8 +1,14 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('marina', 'root', 'mysqluser', {
+const sequelize = new Sequelize({
+  database: 'marina',
+  username: 'root',
+  password: '',
   host: 'localhost',
-  dialect: 'mysql',
+  dialect: 'mysql'
 });
 
-module.exports = sequelize;
+module.exports = {
+  Sequelize,
+  sequelize
+};
