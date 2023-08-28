@@ -15,12 +15,19 @@
         <h3 class="text-center text-black">Empregados cadastrados</h3>
         <div class="container d-inline-flex">
             <a href="/form" class="btn" style="background-color:lightcyan; margin-right:1%;">Cadastrar empregado</a>
-            <form action="/" method="get">
+            <form action="/busca" method="get">
                 <label for="busca">
                     <input type="text" name="busca" id="busca" value="{{busca}}" placeholder="Nome do funcionário" class="form-control" aria-describedby="inputGroup-sizing-sm">
                 </label>
                 <button type="submit" class="btn" style="background-color:lightcyan">Pesquisar</button>
             </form>
+            <a href="/maiorsal" class="btn" style="background-color:lightcyan; margin-right:1%;">Maior salário</a>
+            <a href="/menorsal" class="btn" style="background-color:lightcyan; margin-right:1%;">Menor salário</a>
+            <a href="/admin" class="btn" style="background-color:lightcyan; margin-right:1%;">Administrativo</a>
+            <a href="/design" class="btn" style="background-color:lightcyan; margin-right:1%;">Design</a>
+            <a href="/contabil" class="btn" style="background-color:lightcyan; margin-right:1%;">Contabilidade</a>
+            <a href="/fabrica" class="btn" style="background-color:lightcyan; margin-right:1%;">Fábrica</a>
+
         </div>
         <table class="table table-info table-striped">
             <tr>

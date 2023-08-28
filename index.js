@@ -5,7 +5,7 @@ const app = express();
 const handlebars = require('express-handlebars');
 const handlebars_mod = require('handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
-const appRoutes = require('./routes/appRoutes');
+const appRoutes = require('./routes/approutes');
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,11 +1,70 @@
-const { sequelize, Sequelize } = require ('../config/database');
+const { sequelize, Sequelize } = require('../config/database');
+const Op = Sequelize.Op;
 
-const empregados = require('../models/empregados')(sequelize,Sequelize)
+const empregados = require('../models/empregados')(sequelize, Sequelize);
 
-exports.index = 
+exports.index =
     async (req, res) => {
         const results = await empregados.findAll({
             order: [['id', 'ASC']]
+        });
+        res.render('index', { results });
+    };
+
+exports.maiorsal =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            order: [['sal_bruto', 'DESC']]
+        });
+        res.render('index', { results });
+    };
+
+exports.menorsal =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            order: [['sal_bruto', 'ASC']]
+        });
+        res.render('index', { results });
+    };
+
+exports.admin =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            where: { departamento: '1' }
+        });
+        res.render('index', { results });
+    };
+
+exports.design =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            where: { departamento: '2' }
+        });
+        res.render('index', { results });
+    };
+
+exports.contabil =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            where: { departamento: '3' }
+        });
+        res.render('index', { results });
+    };
+
+exports.fabrica =
+    async (req, res) => {
+        const results = await empregados.findAll({
+            where: { departamento: '4' }
+        });
+        res.render('index', { results });
+    };
+
+exports.busca = 
+    async (req, res) => {
+        const results = await empregados.findAll({
+            where: { 
+                nome: {[Op.substring]: req.query.busca} 
+             }
         });
         res.render('index', { results });
     };
